@@ -331,7 +331,6 @@ img {
   margin-right: auto;
 }
 
-/* ===================Modal============= */
 .backdrop {
   position: fixed;
   top: 0;
@@ -542,50 +541,40 @@ textarea::placeholder {
   fill: var(--accent-color);
 }
 
-/*  ===========HEADER======== */
 .header {
   background-color: var(--default-bg-color);
   border-bottom: 1px solid #ececec;
 }
+.header__nav {
+  display: flex;
+  align-items: center;
+}
 
 .logo {
+  display: inline-block;
+  margin-left: 0;
+  padding-top: 24px;
+  padding-bottom: 25px;
   font-family: "Raleway", sans-serif;
   font-size: 26px;
   line-height: 1.19;
   color: var(--logo-color);
 }
-
-.logo.link {
-  display: inline-block;
-  margin-left: 0;
-  padding-top: 24px;
-  padding-bottom: 25px;
-}
-
-.web {
+.logo--accent {
   color: var(--accent-color);
 }
 
-.main-nav {
-  display: flex;
-  align-items: center;
-}
-
-.site-nav {
+.nav {
   display: flex;
   margin-left: 93px;
 }
-
-.site-nav > .item {
+.nav__item {
   position: relative;
 }
-
-.site-nav .item:not(:last-child) {
+.nav__item:not(:last-child) {
   margin-right: 50px;
 }
-
-.site-nav .link,
-.contact-link {
+.nav__link, .contacts__link {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -594,19 +583,12 @@ textarea::placeholder {
   font-size: 14px;
   line-height: 1, 14;
   letter-spacing: 0.02em;
-  transition-property: color;
-  transition-duration: var(--duration);
-  transition-timing-function: var(--transition-timing);
+  transition: color var(--duration) var(--transition-timing);
 }
-
-.site-nav .link:hover,
-.site-nav .link:focus,
-.contact-link:hover,
-.contact-link:focus {
+.nav__link:hover, .contacts__link:hover, .nav__link:focus, .contacts__link:focus {
   color: var(--accent-color);
 }
-
-.site-nav .link.current::after {
+.nav__link.current::after, .current.contacts__link::after {
   position: absolute;
   content: "";
   bottom: 0;
@@ -616,40 +598,34 @@ textarea::placeholder {
   border-radius: 2px;
   background-color: currentColor;
 }
-
-.site-nav .link.current {
+.nav__link.current, .current.contacts__link {
   color: var(--accent-color);
 }
 
-.top-contact {
+.contacts {
   display: flex;
   margin-left: auto;
 }
-
-.top-contact .item:not(:last-child) {
+.contacts__link:hover, .contacts__link:focus {
+  color: var(--accent-color);
+}
+.contacts .item:not(:last-child) {
   margin-right: 40px;
 }
-
-.contact-link {
+.contacts__link {
   display: flex;
   color: var(--second-text-color);
   align-items: center;
 }
-
-.nav-icon {
+.contacts__icon {
   margin-right: 10px;
   fill: var(--second-text-color);
-  transition-property: fill;
-  transition-duration: var(--duration);
-  transition-timing-function: var(--transition-timing);
+  transition: fill var(--duration) var(--transition-timing);
 }
-
-.contact-link:hover .nav-icon,
-.contact-link:focus .nav-icon {
+.contacts__link:hover .contacts__icon, .contacts__link:focus .contacts__icon {
   fill: currentColor;
 }
 
-/* HERO */
 .hero {
   width: 1600px;
   margin-left: auto;
@@ -663,8 +639,7 @@ textarea::placeholder {
   background-color: #c4c4c4;
   text-align: center;
 }
-
-.hero-title {
+.hero__title {
   display: block;
   margin-bottom: 30px;
   margin-left: auto;
@@ -677,8 +652,7 @@ textarea::placeholder {
   text-transform: uppercase;
   color: var(--default-bg-color);
 }
-
-.hero-button {
+.hero__button {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -693,34 +667,26 @@ textarea::placeholder {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border-style: none;
-  transition-property: background-color;
-  transition-duration: var(--duration);
-  transition-timing-function: var(--transition-timing);
+  transition: background-color var(--duration) var(--transition-timing);
 }
-
-.hero-button:hover,
-.hero-button:focus {
+.hero__button:hover, .hero__button:focus {
   background-color: #188ce8;
 }
 
-/* ABOUT */
-.section-title {
+.section__title {
   display: none;
 }
 
-.section-about {
+.about {
   padding-bottom: 0;
 }
-
-.about-list {
+.about__list {
   display: flex;
 }
-
-.about-list .item:not(:last-child) {
+.about__list .item:not(:last-child) {
   margin-right: 30px;
 }
-
-.about-title {
+.about__title {
   margin-bottom: 10px;
   font-weight: 700;
   font-size: 14px;
@@ -728,15 +694,13 @@ textarea::placeholder {
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
-
-.about-text {
+.about__text {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--second-text-color);
 }
-
-.about-icon-frame {
+.about__icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -747,19 +711,24 @@ textarea::placeholder {
   border-radius: 4px;
 }
 
-/* What we do */
-.what-list {
+.solution__title, .command__title {
+  margin-bottom: 50px;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.direction {
   display: flex;
   justify-content: space-between;
 }
-
-.what-thumb {
+.direction__thumb {
   display: flex;
   position: relative;
   justify-content: center;
 }
-
-.what-thumb::before {
+.direction__thumb::before {
   content: "";
   display: inline-block;
   position: absolute;
@@ -768,8 +737,7 @@ textarea::placeholder {
   width: 100%;
   bottom: 0;
 }
-
-.what-description-title {
+.direction__description {
   position: absolute;
   bottom: 27px;
   color: var(--default-bg-color);
@@ -779,19 +747,8 @@ textarea::placeholder {
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
-
-.what-list .item + .item {
+.direction .item + .item {
   margin-left: 30px;
-}
-
-.what-title,
-.command-maintitle,
-.client-title {
-  margin-bottom: 50px;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-  letter-spacing: 0.03em;
 }
 
 /* Command */
@@ -814,11 +771,8 @@ textarea::placeholder {
   padding-bottom: 16px;
 }
 
-.section-command {
+.command {
   background-color: var(--section-bg-color);
-  /* width: 1600px;
-  margin-right:auto;
-  margin-left:auto;  */
 }
 
 .command-title {

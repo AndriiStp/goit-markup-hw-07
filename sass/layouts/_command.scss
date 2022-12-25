@@ -1,5 +1,9 @@
 /* Command */
 
+.command__title {
+    @extend .solution__title
+}
+
 .command-list {
     display: flex;
 }
@@ -20,11 +24,9 @@
     padding-bottom: 16px;
 }
 
-.section-command {
+.command {
     background-color: var(--section-bg-color);
-    /* width: 1600px;
-    margin-right:auto;
-    margin-left:auto;  */
+   
 }
 
 .command-title {
