@@ -1,35 +1,32 @@
-/* Command */
-
-.command__title {
-    @extend .solution__title
-}
-
-.command-list {
-    display: flex;
-}
-
-.command-list .item+.item {
-    margin-left: 30px;
-}
-
-.command-list .item {
-    background: var(--default-bg-color);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-        0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 0px 0px 4px 4px;
-}
-
-.command-list div {
-    padding-top: 30px;
-    padding-bottom: 16px;
-}
-
 .command {
     background-color: var(--section-bg-color);
-   
+
+    &__title {
+        @extend .solution__title
+    }
 }
 
-.command-title {
+.command__list {
+    display: flex;
+
+    & .item {
+        
+        background: var(--default-bg-color);
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+            0px 2px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 0px 0px 4px 4px;
+    }
+
+    & .item:not(:last-child) {
+        margin-right: 30px;
+    }
+    & div {
+        padding-top: 30px;
+        padding-bottom: 16px;
+    }
+}
+
+.person__title {
     margin-bottom: 10px;
 
     font-weight: 500;
@@ -39,7 +36,7 @@
     text-align: center;
 }
 
-.command-text {
+.person__job {
     font-size: 16px;
     line-height: 1.19;
     letter-spacing: 0.03em;
@@ -48,23 +45,29 @@
     color: var(--second-text-color);
 }
 
-.command-soc-list {
+.person__soc-list {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
 }
 
-.command-soc-item {
+.person__soc-item {
     width: 44px;
     height: 44px;
+
+    &:not(:last-child) {
+        margin-right: 10px;
+    }
 }
 
-.command-soc-item:not(:last-child) {
-    margin-right: 10px;
+.person__soc-icon {
+    fill: var(--soc-icon-fill);
+
+    transition: fill var(--duration) var(--transition-timing);
 }
 
-.command-soc-link {
+.person__soc-link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,26 +75,16 @@
     height: 100%;
     border-radius: 50%;
 
-    transition-property: background-color;
-    transition-duration: var(--duration);
-    transition-timing-function: var(--transition-timing);
-}
+    transition: background-color var(--duration) var(--transition-timing);
 
-.command-soc-link:hover,
-.command-soc-link:focus {
-    background-color: var(--accent-color);
-    fill: var(--default-bg-color);
-}
+    &:hover,
+    &:focus {
+        background-color: var(--accent-color);
+        fill: var(--default-bg-color);
+    }
 
-.command-soc-icon {
-    fill: var(--soc-icon-fill);
-
-    transition-property: fill;
-    transition-duration: var(--duration);
-    transition-timing-function: var(--transition-timing);
-}
-
-.command-soc-link:hover .command-soc-icon,
-.command-soc-link:focus .command-soc-icon {
-    fill: var(--default-bg-color);
+    &:hover .person__soc-icon,
+    &:focus .person__soc-icon {
+        fill: var(--default-bg-color);
+    }
 }

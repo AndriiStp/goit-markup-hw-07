@@ -1,44 +1,43 @@
-/* Clients */
+.client__title {
+    @extend .solution__title
+}
 
-.client-list {
+.client__list {
     display: flex;
 }
 
-.client-item {
+.client__item {
     border: 1px solid #afb1b8;
     border-radius: 4px;
 
-    transition-property: border;
-    transition-duration: var(--duration);
-    transition-timing-function: var(--transition-timing);
+    transition: border var(--duration) var(--transition-timing);
+
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+
+    &:hover,
+    &:focus {
+        border: 1px solid var(--accent-color);
+    }
+    &:hover .client__icon,
+    &:focus .client__icon {
+        fill: var(--accent-color);
+    }
 }
 
-.client-link.link {
+.client__link {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 170px;
     height: 92px;
+  
 }
 
-.client-icon {
+.client__icon {
     fill: var(--soc-icon-fill);
 
-    transition-property: background-color fill;
-    transition-duration: var(--duration);
-    transition-timing-function: var(--transition-timing);
-}
+    transition: background-color, fill var(--duration) var(--transition-timing);
 
-.client-link:hover .client-icon,
-.client-link:focus .client-icon {
-    fill: var(--accent-color);
-}
-
-.client-item:not(:last-child) {
-    margin-right: 30px;
-}
-
-.client-item:hover,
-.client-item:focus {
-    border: 1px solid var(--accent-color);
 }
