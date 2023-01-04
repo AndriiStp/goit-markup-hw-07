@@ -16,25 +16,18 @@
     &__title {
         margin-bottom: 10px;
 
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 1.14;
-        letter-spacing: 0.03em;
+        @include font(700, 14, 1.14);      
         text-transform: uppercase;
     }
 
     &__text {
-        font-size: 14px;
-        line-height: 1.71;
-        letter-spacing: 0.03em;
-
+        @include font(null, 14, 1.71);
+       
         color: var(--second-text-color);
     }
 
     &__icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-all-center;
         width: 270px;
         height: 120px;
         margin-bottom: 30px;

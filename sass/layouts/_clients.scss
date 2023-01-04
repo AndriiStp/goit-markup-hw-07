@@ -9,7 +9,6 @@
 .client__item {
     border: 1px solid #afb1b8;
     border-radius: 4px;
-
     transition: border var(--duration) var(--transition-timing);
 
     &:not(:last-child) {
@@ -27,9 +26,7 @@
 }
 
 .client__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-all-center;
     width: 170px;
     height: 92px;
   
@@ -37,7 +34,6 @@
 
 .client__icon {
     fill: var(--soc-icon-fill);
-
     transition: background-color, fill var(--duration) var(--transition-timing);
 
 }

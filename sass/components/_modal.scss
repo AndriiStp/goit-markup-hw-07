@@ -11,16 +11,15 @@
     opacity: 1;
 
     transition: opacity var(--duration) var(--transition-timing);
-}
 
-
-&.is-hidden {
+    &.is-hidden {
     opacity: 0;
     pointer-events: none;
 }
 
 &.is-hidden .modal {
     transform: translate(-50%, -50%) scale(0.1);
+}
 }
 
 .modal {
@@ -47,10 +46,8 @@
 
     &__title {
         margin-bottom: 12px;
-
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 1.15;
+        @include font(700, 20, 1.15, null);
+        
         text-align: center;
     }
 }
@@ -59,9 +56,7 @@
 
 .modal__close {
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-all-center;
 
     top: 8px;
     right: 8px;
@@ -90,10 +85,8 @@
 }
 
 .form-field__label {
-    font-size: 12px;
-    line-height: 1.17px;
-    letter-spacing: 0.01em;
-
+    @include font(null, 12, 1.17, $ls:0.01em);
+    
     color: var(--second-text-color);
 }
 
@@ -156,10 +149,8 @@
     }
 
     &::placeholder {
-        font-size: 12px;
-        line-height: 1.16;
-        letter-spacing: 0.01em;
-
+        @include font(null, 12, 1.16, $ls:0.01em);
+        
         color: rgba(117, 117, 117, 0.5);
     }
 }
@@ -171,10 +162,8 @@
     padding: 10px 52px;
 
     font-family: inherit;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.88;
-    letter-spacing: 0.06em;
+    @include font(700,16,1.88,$ls:0.06em);
+    
 
     color: var(--default-bg-color);
     background-color: var(--accent-color);
@@ -205,14 +194,11 @@
 }
 
 .checkbox__title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-all-center;
 
     margin-bottom: 30px;
-    font-size: 14px;
-    line-height: 1.71;
-
+    @include font(null, 14, 1.71, null);
+   
     color: var(--second-text-color);
 }
 
