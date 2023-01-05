@@ -54,29 +54,29 @@
             &:not(:last-child) {
                 margin-right: 10px;
             }
-    }
-
-    &__link {
-        @include flex-all-center;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        transition: background-color var(--duration) var(--transition-timing);
-
-        &:hover,
-        &:focus {
-            background-color: var(--accent-color);
-            fill: var(--default-bg-color);
-        }
-
-        &:hover .social__icon,
-        &:focus .social__icon {
-            fill: var(--default-bg-color);
-        }
-    }
+    } 
 
     &__icon {
         fill: var(--soc-icon-fill);
         transition: fill var(--duration) var(--transition-timing);
+    }
+}
+
+.social__link {
+    @include flex-all-center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: background-color var(--duration) var(--transition-timing);
+
+    &:hover,
+    &:focus {
+        background-color: var(--accent-color);
+        fill: var(--default-bg-color);
+    }
+
+    &:hover .social__icon,
+    &:focus .social__icon {
+        fill: var(--default-bg-color);
     }
 }
