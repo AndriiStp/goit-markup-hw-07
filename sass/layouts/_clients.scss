@@ -2,38 +2,36 @@
     @extend .solution__title
 }
 
-.client__list {
+.partner {
     display: flex;
-}
 
-.client__item {
+    &__item {
     border: 1px solid #afb1b8;
     border-radius: 4px;
     transition: border var(--duration) var(--transition-timing);
 
-    &:not(:last-child) {
-        margin-right: 30px;
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        &:hover,
+        &:focus {
+            border: 1px solid var(--accent-color);
+        }
+        &:hover .partner__icon,
+        &:focus .partner__icon {
+            fill: var(--accent-color);
+        }
     }
 
-    &:hover,
-    &:focus {
-        border: 1px solid var(--accent-color);
+    &__link {
+        @include flex-all-center;
+        width: 170px;
+        height: 92px;
     }
-    &:hover .client__icon,
-    &:focus .client__icon {
-        fill: var(--accent-color);
+    &__icon {
+        fill: var(--soc-icon-fill);
+        transition: background-color, fill var(--duration) var(--transition-timing);
+
     }
-}
-
-.client__link {
-    @include flex-all-center;
-    width: 170px;
-    height: 92px;
-  
-}
-
-.client__icon {
-    fill: var(--soc-icon-fill);
-    transition: background-color, fill var(--duration) var(--transition-timing);
-
 }
